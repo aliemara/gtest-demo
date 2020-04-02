@@ -1,5 +1,5 @@
 #!/bin/bash
-
+set -e
 # rm -rf build # clean, if needed
 mkdir -p build
 cd build
