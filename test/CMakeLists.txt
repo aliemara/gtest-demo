@@ -2,6 +2,7 @@ add_executable(
     unit_tests
     example_add.cpp
     example_subtract.cpp
+    my_tests.cpp
     )
 
 target_link_libraries(
