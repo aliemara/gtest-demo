@@ -10,5 +10,5 @@ TEST(bank, defaultCtor)
 TEST(bank, paramCtor)
 {
 	BankAccount b(5);
-	ASSERT_EQ(b.balance, 51);
+	ASSERT_EQ(b.balance, 5);
 }
