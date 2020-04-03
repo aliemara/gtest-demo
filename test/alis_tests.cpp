@@ -34,6 +34,24 @@ TEST(bank, deposit)
 
 
 ////////////////////////////////////
+///// Fatal vs Non-Fatal Fail //////
+///// ASSERT | EXPECT 		  //////
+////////////////////////////////////
+
+TEST(fatality, fatal_example)
+{
+	ASSERT_EQ(1, 2);
+	std::cout<<"this line won't be printed. 'Assert' failure is fatal.\n";
+}
+
+
+TEST(fatality, non_fatal_example)
+{
+	EXPECT_EQ(1, 2);
+	std::cout<<"this line will be printed. 'Expect' failure is non-fatal.\n";
+}
+
+////////////////////////////////////
 ///// 	Test Fixtures	 ///////////
 ////////////////////////////////////
 
