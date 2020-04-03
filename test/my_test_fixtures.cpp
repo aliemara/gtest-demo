@@ -1,5 +1,5 @@
 #include "gtest/gtest.h"
-#include "my_classes.h"
+#include "alis_classes.h"
 
 struct BankAccountTest : testing::Test {
 	BankAccountTest() {

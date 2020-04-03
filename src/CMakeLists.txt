@@ -1,15 +1,15 @@
-add_library(example "")
+add_library(alis_lib "")
 
 target_sources(
-    example
+    alis_lib
     PRIVATE
-        example.cpp
+        alis_classes.cpp
     PUBLIC
-        ${CMAKE_CURRENT_LIST_DIR}/example.h
+        ${CMAKE_CURRENT_LIST_DIR}/alis_classes.h
     )
 
 target_include_directories(
-    example
+    alis_lib
     PUBLIC
         ${CMAKE_CURRENT_LIST_DIR}
     )

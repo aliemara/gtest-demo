@@ -1,7 +1,5 @@
 add_executable(
     unit_tests
-    example_add.cpp
-    example_subtract.cpp
     my_tests.cpp
     my_test_fixtures.cpp
     )
@@ -9,7 +7,7 @@ add_executable(
 target_link_libraries(
     unit_tests
     gtest_main
-    example
+    alis_lib
     )
 
 add_test(
