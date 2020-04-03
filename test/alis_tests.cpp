@@ -30,6 +30,23 @@ TEST(bank, deposit)
 	ASSERT_EQ(b.getBalance(), start*2);
 }
 
+////////////////////////////////////
+// Each test consists of 3 steps: //
+// 1. Arrange 					  //
+// 2. Act 					  	  //
+// 3. Assert 					  //
+////////////////////////////////////
+
+TEST(unitTestSteps, AAA)
+{
+	int value = 5;
+	int increment = 8;
+
+	value = value + increment;
+
+	ASSERT_EQ(value, 13);
+}
+
 
 ////////////////////////////////////
 ///// Fatal vs Non-Fatal Fail //////
