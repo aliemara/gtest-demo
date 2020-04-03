@@ -39,11 +39,14 @@ TEST(bank, deposit)
 
 TEST(unitTestSteps, AAA)
 {
+	// 1. arrange
 	int value = 5;
 	int increment = 8;
 
+	// 2. act
 	value = value + increment;
 
+	// 3. assert
 	ASSERT_EQ(value, 13);
 }
 
