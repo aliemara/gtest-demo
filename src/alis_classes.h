@@ -9,6 +9,15 @@ public:
 		balance += d;
 	}
 
+	bool withdraw(int amount) {
+		if (balance >= amount) {
+			balance -= amount;
+			return true;
+		}
+		
+		return false;
+	}
+
 	const int& getBalance() { return balance; }
 
 private: 
