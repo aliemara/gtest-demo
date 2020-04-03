@@ -1,7 +1,6 @@
 add_executable(
     unit_tests
-    my_tests.cpp
-    my_test_fixtures.cpp
+    alis_tests.cpp
     )
 
 target_link_libraries(
