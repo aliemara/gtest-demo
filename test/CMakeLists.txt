@@ -3,6 +3,7 @@ add_executable(
     example_add.cpp
     example_subtract.cpp
     my_tests.cpp
+    my_test_fixtures.cpp
     )
 
 target_link_libraries(
