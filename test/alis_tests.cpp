@@ -104,17 +104,33 @@ TEST(fatality, non_fatal_example)
 	std::cout<<"this line will be printed. 'Expect' failure is non-fatal.\n";
 }
 
+*/
+
 ////////////////////////////////////
 ///// 	Test Fixtures	 ///////////
 ////////////////////////////////////
 
 
 struct BankAccountTest : testing::Test {
-	BankAccountTest(int amount) : account(new BankAccount(amount)) {}
+	void SetUp() {
+		std::cout<<"Setup of BankAccountTest was called.\n";
+		// any set up code
+	}
+
+	void TearDown() {
+		std::cout<<"TearDown of BankAccountTest was called.\n";
+		// any clean up code
+	}
+
+	BankAccountTest(int amount) : account(new BankAccount(amount)) {
+		std::cout<<"BankAccountTest ctor\n";
+	}
+
 	BankAccountTest() : BankAccountTest(0) {}
 
 	~BankAccountTest() {
 		delete account;
+		std::cout<<"BankAccountTest dtor\n";
 	}
 
 	BankAccount* account;
