@@ -1,7 +1,5 @@
-// Andrew: contruction records.
-// David: Forms team. High functionality.
-
 // https://youtu.be/16FI1-d2P4E
+// https://www.youtube.com/watch?v=x5_UxQ9wrH4&list=PLvWTmpiyQGNYTqDr9_BF1hPCtdCr7VHAZ&index=3
 #include "gtest/gtest.h"
 #include "alis_classes.h"
 
