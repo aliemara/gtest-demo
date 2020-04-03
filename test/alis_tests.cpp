@@ -50,12 +50,47 @@ TEST(unitTestSteps, AAA)
 	ASSERT_EQ(value, 13);
 }
 
+////////////////////////////////////
+// Main comparison functions	  //
+// Note: each assertion should be //
+// in a separate/independent test.//
+// This big test is just to demo  //
+////////////////////////////////////
+
+TEST(comparisonMethods, demo)
+{
+	std::string x = "ali";
+	// string equal
+	ASSERT_STREQ(x.c_str(), "ali");
+	
+	// string not equal
+	ASSERT_STRNE("x", "ali");
+
+	// string case-insensitive comparison
+	ASSERT_STRCASEEQ("ALI", "ali");
+
+	// not equal
+	ASSERT_NE(1, 2);
+
+	// less than
+	ASSERT_LT(1, 2);
+
+	// less than or equal
+	ASSERT_LE(2, 2);
+
+	// than or equal
+	ASSERT_GT(3, 2);
+
+	// greater than or equal
+	ASSERT_GE(2, 2);
+}
 
 ////////////////////////////////////
 ///// Fatal vs Non-Fatal Fail //////
 ///// ASSERT | EXPECT 		  //////
 ////////////////////////////////////
 
+/*
 TEST(fatality, fatal_example)
 {
 	ASSERT_EQ(1, 2);
