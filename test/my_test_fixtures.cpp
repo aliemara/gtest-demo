@@ -16,3 +16,8 @@ struct BankAccountTest : testing::Test {
 TEST_F(BankAccountTest, ctor) {
 	ASSERT_EQ(account->getBalance(), 0);
 }
+
+TEST_F(BankAccountTest, deposit) {
+	account->deposit(100);
+	ASSERT_EQ(account->getBalance(), 100);
+}
