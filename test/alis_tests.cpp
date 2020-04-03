@@ -1,3 +1,6 @@
+// Andrew: contruction records.
+// David: Forms team. High functionality.
+
 // https://youtu.be/16FI1-d2P4E
 #include "gtest/gtest.h"
 #include "alis_classes.h"
@@ -6,9 +9,9 @@
 ///// 	Simple Tests	 ///////////
 ////////////////////////////////////
 
-// TEST: general tes
-// First Param: Name of group of tests
-// Second Param: Name of test in this group
+// TEST: general test
+// First Param: test name
+// Second Param: subtest name
 TEST(bank, defaultCtor)
 {
 	BankAccount b;
