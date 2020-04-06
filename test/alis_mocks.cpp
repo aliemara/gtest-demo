@@ -67,3 +67,31 @@ TEST(MyDBTest, loginTestFailure) {
 	EXPECT_EQ(retVal, -1);
 }
 
+/*
+	Fails once then succeeds because success is the default behavior.
+	Read the comments for new changes and things to learn.
+*/
+TEST(MyDBTest, loginTestFailureThenSuccess) {
+	MockDB mockdb;
+	MyComponent component(mockdb);
+
+	// If no return is specified, return false
+	ON_CALL(mockdb, login(testing::_, testing::_)).WillByDefault(testing::Return(true));
+
+	// _ means you don't care what value you get.
+	EXPECT_CALL(mockdb,login(testing::_, testing::_))		
+	// AtLeast twice
+	.Times(testing::AtLeast(2))
+	// WillRepeatedly is better than WillOnce.
+	// Means you always keep returning false
+	.WillOnce(testing::Return(false));
+
+	// Inside init, db will be called once, with those 2 args
+	// and it will mock real db by returning true, so init 
+	// will succeed and return 1
+	int retVal = component.init("ali", "alispassword");
+
+	EXPECT_EQ(retVal, -1);
+}
+
+
