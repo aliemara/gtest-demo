@@ -53,8 +53,8 @@ TEST(MyDBTest, loginTestFailure) {
 
 	// _ means you don't care what value you get.
 	EXPECT_CALL(mockdb,login(testing::_, testing::_))		
-	// AtLeast once, not just once
-	.Times(testing::AtLeast(1))
+	// AtLeast twice
+	.Times(testing::AtLeast(2))
 	// WillRepeatedly is better than WillOnce.
 	// Means you always keep returning false
 	.WillRepeatedly(testing::Return(false));
