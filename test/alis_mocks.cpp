@@ -18,9 +18,10 @@ In summary:
 
 class MockDB : public DataBase {
 public:
-	MOCK_METHOD0(fetchRecord, int());
 	MOCK_METHOD1(logout, bool (std::string uername));
 	MOCK_METHOD2(login, bool (std::string uername, std::string password));
+	MOCK_METHOD0(fetchRecordFromCloudDB, int());
+	MOCK_METHOD0(fetchRecordFromLocalDB, int());
 };
 
 TEST(MyDBTest, loginTestSuccess) {
@@ -94,4 +95,13 @@ TEST(MyDBTest, loginTestFailureThenSuccess) {
 	EXPECT_EQ(retVal, -1);
 }
 
+TEST(MyDBTest, fetchingLocalOrCloud) {
+	MockDB mockdb;
+	MyComponent component(mockdb);
 
+	ON_CALL(mockdb, fetchRecordFromLocalDB()).WillByDefault(testing::Return(1));
+	ON_CALL(mockdb, fetchRecordFromCloudDB()).WillByDefault(testing::Return(1));
+	int userInfo = component.getUserInfo();
+
+	EXPECT_EQ(userInfo, 1);
+}

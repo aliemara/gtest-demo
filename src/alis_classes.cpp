@@ -11,6 +11,10 @@ bool DataBase::logout(std::string username) {
 	return true;
 }
 
-int DataBase::fetchRecord() {
+int DataBase::fetchRecordFromLocalDB() {
+	return -1;
+}
+
+int DataBase::fetchRecordFromCloudDB() {
 	return -1;
 }

@@ -41,7 +41,10 @@ public:
 	virtual bool logout(std::string username);
 
 	// returns -1 on failure
-	virtual int fetchRecord();
+	virtual int fetchRecordFromLocalDB();
+
+	// returns -1 on failure
+	virtual int fetchRecordFromCloudDB();
 };
 
 // ----------------------------------------------------------------
@@ -68,5 +71,15 @@ public:
 			}
 			return -1;
 		}
+	}
+
+	int getUserInfo() {
+		// We don't know where the user info is. Randomize it.
+		srand(time(nullptr));
+		bool isUserInfoLocal = (rand() % 2 == 0);
+		if (isUserInfoLocal)
+			return db.fetchRecordFromLocalDB();
+		else
+			return db.fetchRecordFromCloudDB();
 	}
 };
